@@ -8,3 +8,4 @@ from delete_view_test_mixin import DeleteViewTestMixin
 from form_view_test_mixin import FormViewTestMixin
 from anonymous_user_only_test_mixin import AnonymousUserOnlyTestMixin
 from webhook_test_mixin import WebhookTestMixin
+from authenticated_view_test_mixin import AuthenticatedViewTestMixin
