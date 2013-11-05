@@ -10,7 +10,7 @@ setup(name='django-test-views',
 	author_email='jon@epicbagel.com',
 	url="https://github.com/epicbagel/django-test-views",
 	install_requires=[
-		'factory_boy<2.0.0',
-		'django_libs==1.24',
+		'factory_boy>2.0.0',
+		'django_libs>1.23',
 	],
 )
