@@ -13,10 +13,13 @@ class UpdateViewTestMixin(SingleObjectTestMixin):
 		response = self.is_callable(user = self.user, extra = {
 			"follow" : True,
 		}, method = "post", data = data)
-		#print response
 		# Logout and test anonymous view
 		self.client.logout()
 		self.should_redirect_to_login_when_anonymous()
+		# Check we cannot access when authanticated
+		if self.create_unauthorized_user():
+			response = self.is_callable(user = self.user)
+			self.assertEqual(response.status_code, 302)
 
 
 

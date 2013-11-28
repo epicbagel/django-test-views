@@ -1,6 +1,6 @@
 from django_test_views.mixins import SingleObjectTestMixin
 
-# ToDo - test for another company and check for a user facing message. 
+# ToDo - test for another company and check for a user facing message.
 class DeleteViewTestMixin(SingleObjectTestMixin):
 	def get_post_delete_data(self):
 		return list(self.get_data())
@@ -18,6 +18,10 @@ class DeleteViewTestMixin(SingleObjectTestMixin):
 		# Logout and check we can access the page
 		self.client.logout()
 		self.should_redirect_to_login_when_anonymous()
+		# Check we cannot access when authanticated
+		if self.create_unauthorized_user():
+			response = self.is_callable(user = self.user)
+			self.assertEqual(response.status_code, 302)
 
 
 
