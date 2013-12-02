@@ -1,4 +1,4 @@
-from django_libs.tests.mixins import ViewTestMixin
+from django_test_views.mixins import ViewTestMixin
 from django.conf import settings
 from django_test_views.factories import UserFactory
 

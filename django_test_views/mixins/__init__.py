@@ -1,3 +1,4 @@
+from view_test_mixin import ViewTestMixin
 from base_object_mixin import BaseObjectMixin
 from single_object_test_mixin import SingleObjectTestMixin
 from setup_account_mixin import SetupAccountMixin
