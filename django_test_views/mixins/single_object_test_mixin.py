@@ -1,3 +1,4 @@
+
 from django_test_views.mixins import BaseObjectMixin
 
 class SingleObjectTestMixin(BaseObjectMixin):

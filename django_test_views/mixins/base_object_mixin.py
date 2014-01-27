@@ -2,6 +2,7 @@ class BaseObjectMixin(object):
 	factory_class = None
 	data = None
 	factory_kwargs = {}
+	delete = True
 	# Returns the Factory used to create the object
 	def get_factory_class(self):
 		# Factory class will be set on the class fetched with this method.
@@ -13,6 +14,11 @@ class BaseObjectMixin(object):
 		return self.factory_kwargs
 	# Generate a list of objects from the factory and the object kwargs
 	def generate_data(self):
+		if not self.data and self.delete:
+			# Delete all instances of this object
+			self.factory_class.FACTORY_FOR.objects.all().delete()
+		if self.data:
+			return self.data
 		kwargs = self.get_factory_kwargs()
 		if "size" in kwargs:
 			# Create the list of objects
@@ -24,7 +30,7 @@ class BaseObjectMixin(object):
 	# Returns the data generated from the factory
 	def get_data(self):
 		return self.data
-
-
-
+	
+	
+	
 

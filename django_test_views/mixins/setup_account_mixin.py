@@ -4,6 +4,7 @@ from django_test_views.factories import UserFactory
 
 class SetupAccountMixin(ViewTestMixin):
 	def setUp(self):
+		super(SetupAccountMixin, self).setUp()
 		self.user = self.get_user_factory().create()
 	# Accepts a user and logs them in to the test client
 	def login(self, user, password = "password"):
