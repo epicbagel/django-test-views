@@ -5,6 +5,7 @@ from setup_account_mixin import SetupAccountMixin
 from create_view_test_mixin import CreateViewTestMixin
 from list_view_test_mixin import ListViewTestMixin
 from update_view_test_mixin import UpdateViewTestMixin
+from update_with_inlines_view_test_mixin import UpdateWithInlinesViewTestMixin
 from delete_view_test_mixin import DeleteViewTestMixin
 from form_view_test_mixin import FormViewTestMixin
 from anonymous_user_only_test_mixin import AnonymousUserOnlyTestMixin
