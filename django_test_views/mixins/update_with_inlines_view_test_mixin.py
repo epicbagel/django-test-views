@@ -1,6 +1,6 @@
 from django_test_views.mixins import UpdateViewTestMixin
 
-class UpdateWithInlinesViewTestMixin(UpdateWithInlinesViewTestMixin):
+class UpdateWithInlinesViewTestMixin(UpdateViewTestMixin):
 	def manipulate_payload(self, form, context):
 		# Loop through each formset in the view, populating the initial data
 		for formset in context["inlines"]:
