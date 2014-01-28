@@ -1,7 +1,7 @@
 # Loads a URL, posts data and checks the result
 class FormViewTestMixin(object):
 	# Allows the payload to be manipulated before posting back
-	def manipulate_payload(self, form):
+	def manipulate_payload(self, form, context):
 		return form
 	# Allows a custom form name to be passed
 	def get_form_name(self):
