@@ -15,7 +15,7 @@ class FormViewTestMixin(object):
 		#response = self.client.get(reverse("accounts:change-password"))
 		response = self.should_be_callable_when_authenticated(self.user)
 		# Load and set the form data
-		data = self.manipulate_payload(response.context[self.get_form_name()].initial)
+		data = self.manipulate_payload(response.context[self.get_form_name()].initial, context = response.context)
 		# Post the data
 		response = self.is_callable(user = self.user, extra = {
 			"follow" : True,
