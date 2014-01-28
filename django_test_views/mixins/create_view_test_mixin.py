@@ -9,7 +9,7 @@ class CreateViewTestMixin(BaseObjectMixin):
 		self.login(self.user)
 		response = self.should_be_callable_when_authenticated(self.user)
 		# Change the data for the re-post
-		data = self.manipulate_payload(response.context["form"].initial)
+		data = self.manipulate_payload(response.context["form"].initial, context = response.context)
 		response = self.is_callable(user = self.user, method = "post", data = data)
 		# Make sure we were redirected successfully. Only happens when the object is
 		# successfully created. TODO check for a success message
