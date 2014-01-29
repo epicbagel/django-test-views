@@ -6,7 +6,7 @@ class ApiTestMixin(BaseObjectMixin):
 	def get_detail_url(self):
 		return "/api/v1/%s/%s/" % (self.get_resource_name(), self.get_data().pk)
 	def get_resource_name(self):
-		return self.get_factory_class().FACTORY_FOR._meta.verbose_name
+		return self.get_factory_class().FACTORY_FOR._meta.verbose_name.replace(" ", "")
 	def test_list(self):
 		self.login(self.user)
 		self.generate_data()
