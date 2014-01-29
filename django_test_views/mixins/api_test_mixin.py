@@ -1,7 +1,7 @@
 from django_test_views.mixins import BaseObjectMixin
 from tastypie.test import ResourceTestCase
 
-class ApiTestCase(BaseObjectMixin, ResourceTestCase):
+class ApiTestMixin(BaseObjectMixin, ResourceTestCase):
 	def get_list_url(self):
 		return "/api/v1/%s/" % self.get_resource_name()
 	def get_detail_url(self):
